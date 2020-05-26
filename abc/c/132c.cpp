@@ -45,4 +45,14 @@ int gcd(int a, int b) {
 
 int main() {
   std::cout << std::setprecision(9);
+  int n;
+  cin >> n;
+
+  vector<int> d(n);
+  for (int i=0; i<n; i++) {
+    cin >> d.at(i);
+  }
+  sort(d.begin(), d.end());
+
+  cout << d.at(n / 2) - d.at(n / 2 - 1) << endl;
 }
