@@ -31,6 +31,22 @@ string to_str_with_zero(int i, int w) {
   return s;
 }
 
+int letter_to_int(char c) {
+  return tolower(c) - 'a';
+}
+
+bool array_equal(vector<int> a1, vector<int>a2) {
+  if (a1.size() != a2.size()) {
+    return false;
+  }
+  for (int i=0; i<a1.size(); i++) {
+    if (a1.at(i) != a2.at(i)) {
+      return false;
+    }
+  }
+  return true;
+}
+
 int gcd(int a, int b) {
   if (a == b) {
     return a;
