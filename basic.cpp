@@ -59,6 +59,38 @@ int gcd(int a, int b) {
   }
 }
 
+char int_to_char(int a) {
+  if (a == -1) {
+    return 'z';
+  }
+  else {
+    return 'a' + a;
+  }
+}
+
+long nCr(int n, int r) {
+    long ans = 1;
+    for (int i = n; i > n - r; --i) {
+        ans = ans*i;
+    }
+    for (int i = 1 ; i < r + 1; ++i) {
+        ans = ans / i;
+    }
+    return ans;
+}
+
+long long modinv(long long a, long long m) {
+    long long b = m, u = 1, v = 0;
+    while (b) {
+        long long t = a / b;
+        a -= t * b; swap(a, b);
+        u -= t * v; swap(u, v);
+    }
+    u %= m; 
+    if (u < 0) u += m;
+    return u;
+}
+
 int main() {
   std::cout << std::setprecision(9);
 }
