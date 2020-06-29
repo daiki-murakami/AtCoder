@@ -91,6 +91,15 @@ long long modinv(long long a, long long m) {
     return u;
 }
 
+int divide_count(int a, int divider) {
+  int r = 0;
+  while(a % divider == 0) {
+    a /= divider;
+    r++;
+  }
+  return r;
+}
+
 int main() {
   std::cout << std::setprecision(9);
 }
