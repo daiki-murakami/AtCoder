@@ -11,3 +11,10 @@ PAST 58点、初級
 
 #### DP
 * [ABC129C](https://atcoder.jp/contests/abc129/tasks/abc129_c)
+
+#### 尺取り法
+* [ABC172C](https://atcoder.jp/contests/abc172/tasks/abc172_c)
+
+#### エラトステネスの篩
+* [ABC170D](https://atcoder.jp/contests/abc170/tasks/abc170_d)
+
