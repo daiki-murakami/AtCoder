@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -35,16 +36,16 @@ int letter_to_int(char c) {
   return tolower(c) - 'a';
 }
 
-bool array_equal(vector<int> a1, vector<int>a2) {
+int compare_array(vector<int> a1, vector<int>a2) {
   if (a1.size() != a2.size()) {
-    return false;
+    return a1.size() - a2.size();
   }
   for (int i=0; i<a1.size(); i++) {
     if (a1.at(i) != a2.at(i)) {
-      return false;
+      return a1.at(i) - a2.at(i);
     }
   }
-  return true;
+  return 0;
 }
 
 int gcd(int a, int b) {
@@ -98,6 +99,17 @@ int divide_count(int a, int divider) {
     r++;
   }
   return r;
+}
+
+bool is_prime(int a) {
+  int i = 2;
+  while(i * i <= a) {
+    if(a % i == 0) {
+      return false;
+    }
+    i++;
+  }
+  return true;
 }
 
 int main() {
