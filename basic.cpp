@@ -49,15 +49,10 @@ int compare_array(vector<int> a1, vector<int>a2) {
 }
 
 int gcd(int a, int b) {
-  if (a == b) {
-    return a;
+  if(a % b == 0) {
+    return b;
   }
-  else if (a > b) {
-    return gcd(a - b, b);
-  }
-  else {
-    return gcd(a, b - a);
-  }
+  return gcd(b, a % b);
 }
 
 char int_to_char(int a) {
