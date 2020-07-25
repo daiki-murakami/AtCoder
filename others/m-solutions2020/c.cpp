@@ -107,37 +107,21 @@ bool is_prime(int a) {
   return true;
 }
 
-vector<vector<int>> all_comb(int n, int k) {
-  vector<vector<int>> combs(nCr(n, k), vector<int>(k));
-  for(int i=0; i<k; i++) {
-    combs[0][i] = i;
-    combs[1][i] = i;
-  }
-  
-  for(long i=1; i<nCr(n, k); i++) {
-    int p = 1;
-    while(combs[i][k - p] == n - p) {
-      p++;
-      if(p > k) {
-        break;
-      }
-    }
-    combs[i][k - p]++;
-    int q = combs[i][k - p];
-    for(int j=1; j<p; j++) {
-      combs[i][k - p + j] = q + j;
-    }
-
-    if(i < nCr(n, k) - 1) {
-      for(int j=0; j<k; j++) {
-        combs[i + 1][j] = combs[i][j];
-      }
-    }
-  }
-
-  return combs;
-}
-
 int main() {
   std::cout << std::setprecision(9);
+  int n, k;
+  cin >> n >> k;
+
+  vector<int> a(n);
+  for(int i=0; i<n; i++) {
+    cin >> a[i];
+    if(i >= k) {
+      if(a[i] > a[i - k]) {
+        cout << "Yes" << endl;
+      }
+      else {
+        cout << "No" << endl;
+      }
+    }
+  }
 }

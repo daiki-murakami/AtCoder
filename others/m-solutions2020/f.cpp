@@ -107,37 +107,63 @@ bool is_prime(int a) {
   return true;
 }
 
-vector<vector<int>> all_comb(int n, int k) {
-  vector<vector<int>> combs(nCr(n, k), vector<int>(k));
-  for(int i=0; i<k; i++) {
-    combs[0][i] = i;
-    combs[1][i] = i;
-  }
-  
-  for(long i=1; i<nCr(n, k); i++) {
-    int p = 1;
-    while(combs[i][k - p] == n - p) {
-      p++;
-      if(p > k) {
-        break;
-      }
-    }
-    combs[i][k - p]++;
-    int q = combs[i][k - p];
-    for(int j=1; j<p; j++) {
-      combs[i][k - p + j] = q + j;
-    }
+struct plane {
+  int x;
+  int y;
+  char u;
 
-    if(i < nCr(n, k) - 1) {
-      for(int j=0; j<k; j++) {
-        combs[i + 1][j] = combs[i][j];
-      }
+  bool compare_by_plus(const plane& p1, const plane& p2) {
+    if(p1.x + p1.y == p2.x + p2.y) {
+      return p1.u < p2.u;
+    }
+    else {
+      return p1.x + p1.y < p2.x + p2.y;
     }
   }
 
-  return combs;
+  bool compare_by_minus(const plane& p1, const plane& p2) {
+    if(p1.y - p1.x == p2.y - p2.x) {
+      return p1.u < p2.u;
+    }
+    else {
+      return p1.y - p1.x < p2.y - p2.x;
+    }
+  }
+};
+
+bool compare_by_plus(const plane& p1, const plane& p2) {
+  if(p1.x + p1.y == p2.x + p2.y) {
+    return p1.u < p2.u;
+  }
+  else {
+    return p1.x + p1.y < p2.x + p2.y;
+  }
+}
+
+bool compare_by_minus(const plane& p1, const plane& p2) {
+  if(p1.y - p1.x == p2.y - p2.x) {
+    return p1.u < p2.u;
+  }
+  else {
+    return p1.y - p1.x < p2.y - p2.x;
+  }
 }
 
 int main() {
   std::cout << std::setprecision(9);
+  int n;
+  cin >> n;
+
+  vector<plane> p(n);
+  for(int i=0; i<n; i++) {
+    int x, y;
+    char u;
+    cin >> x >> y >> u;
+    p[i] = {x, y, u};
+  }
+  sort(p.begin(), p.end(), compare_by_plus);
+
+  for(int i=0; i<n; i++) {
+    cout << p[i].x << ' ' << p[i].y << ' ' << p[i].u << endl;
+  }
 }
