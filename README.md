@@ -9,8 +9,11 @@ PAST 58点、初級
 * [ABC128C](https://atcoder.jp/contests/abc128/tasks/abc128_c)
 * [ABC147C](https://atcoder.jp/contests/abc147/tasks/abc147_c)
 
+#### 二分探索
+* [ABC174E](https://atcoder.jp/contests/abc174/tasks/abc174_e)
+
 #### 貪欲法
-* [ABC131D](https://atcoder.jp/contests/abc131/tasks/abc131_c)
+* [ABC131D](https://atcoder.jp/contests/abc131/tasks/abc131_d)
 
 #### DP
 * [ABC129C](https://atcoder.jp/contests/abc129/tasks/abc129_c)

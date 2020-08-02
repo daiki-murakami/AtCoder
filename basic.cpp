@@ -37,10 +37,12 @@ int letter_to_int(char c) {
 }
 
 int compare_array(vector<int> a1, vector<int>a2) {
-  if (a1.size() != a2.size()) {
-    return a1.size() - a2.size();
+  int n1 = a1.size();
+  int n2 = a2.size();
+  if (n1 != n2) {
+    return n1 - n2;
   }
-  for (int i=0; i<a1.size(); i++) {
+  for (int i=0; i<n1; i++) {
     if (a1.at(i) != a2.at(i)) {
       return a1.at(i) - a2.at(i);
     }
@@ -136,6 +138,32 @@ vector<vector<int>> all_comb(int n, int k) {
   }
 
   return combs;
+}
+
+template <typename TYPE> void co(TYPE a) {
+  cout << a << endl;
+}
+
+template <typename TYPE> void co_2(TYPE a, TYPE b) {
+  cout << a << ' ' << b << endl;
+}
+
+template <typename TYPE> void co_l(vector<TYPE> as) {
+  int n = as.size();
+  for(int i=0; i<n; i++) {
+    cout << as[i] << endl;
+  }
+}
+
+template <typename TYPE> void co_s(vector<TYPE> as) {
+  int n = as.size();
+  for(int i=0; i<n; i++) {
+    if(i > 0) {
+      cout << ' ';
+    }
+    cout << as[i];
+  }
+  cout << endl;
 }
 
 int main() {

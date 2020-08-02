@@ -140,34 +140,26 @@ vector<vector<int>> all_comb(int n, int k) {
 
 int main() {
   std::cout << std::setprecision(9);
-  int n, k;
-  cin >> n >> k;
+  int n;
+  cin >> n;
 
-  vector<double> a(n);
-  int max = 0;
+  int count = 1;
+  int ans = 0;
   for(int i=0; i<n; i++) {
-    cin >> a[i];
-    if(max < a[i]) {
-      max = a[i];
-    }
-  }
-
-  int left = 1;
-  int right = max;
-  double mid;
-  while(left < right) {
-    mid = (left + right) / 2;
-    long cut = 0;
-    for(int i=0; i<n; i++) {
-      cut += ceil(a[i] / mid) - 1;
-    }
-    if(cut > k) {
-      left = mid + 1;
+    int a;
+    cin >> a;
+    if(a == count) {
+      count++;
     }
     else {
-      right = mid;
+      ans++;
     }
   }
 
-  cout << (left + right) / 2 << endl;
+  if(count == 1) {
+    cout << -1 << endl;
+  }
+  else {
+    cout << ans << endl;
+  }
 }
