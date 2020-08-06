@@ -5,6 +5,9 @@ PAST 58点、初級
 
 ## 問題リスト
 
+#### list
+* [ABC158D](https://atcoder.jp/contests/abc158/tasks/abc158_d)
+
 #### ビット全探索
 * [ABC128C](https://atcoder.jp/contests/abc128/tasks/abc128_c)
 * [ABC147C](https://atcoder.jp/contests/abc147/tasks/abc147_c)
