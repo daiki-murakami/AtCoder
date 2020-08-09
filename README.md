@@ -15,6 +15,9 @@ PAST 58点、初級
 #### 二分探索
 * [ABC174E](https://atcoder.jp/contests/abc174/tasks/abc174_e)
 
+#### 幅優先探索
+* [ABC168D](https://atcoder.jp/contests/abc168/tasks/abc168_d)
+
 #### 貪欲法
 * [ABC131D](https://atcoder.jp/contests/abc131/tasks/abc131_d)
 
@@ -25,5 +28,6 @@ PAST 58点、初級
 * [ABC172C](https://atcoder.jp/contests/abc172/tasks/abc172_c)
 
 #### エラトステネスの篩
+* [ABC169D](https://atcoder.jp/contests/abc169/tasks/abc169_d)
 * [ABC170D](https://atcoder.jp/contests/abc170/tasks/abc170_d)
 
