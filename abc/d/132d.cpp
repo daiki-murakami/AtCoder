@@ -169,4 +169,21 @@ template <typename TYPE> void co_s(vector<TYPE> as) {
 int main() {
   std::cout << std::setprecision(9);
   long mod = 1000000007;
+  long n, k;
+  cin >> n >> k;
+
+  long a = n - k + 1;
+  long b = 1;
+  co((a * b) % mod);
+  for(long i=1; i<k; i++) {
+    a *= n - k - i + 1;
+    a %= mod;
+    a *= modinv(i + 1, mod);
+    a %= mod;
+    b *= k - i;
+    b %= mod;
+    b *= modinv(i, mod);
+    b %= mod;
+    co((a * b) % mod);
+  }
 }
